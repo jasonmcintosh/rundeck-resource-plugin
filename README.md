@@ -2,15 +2,15 @@ Plugin to aquire and release resources in RunDeck using Consul.  Provides a shar
 
 Requirements
 ------------
-Consul installed in /usr/local/bin/ - hopefully configurable in the future as a global property
+Consul installed in /usr/local/bin/ - hopefully configurable in the future as a global property.  See http://consul.io/
 Consul MUST be greater than version 7
 Connects to API via Localhost - this may be configurable in the future.  
 
 Installation
 ------------
 * Put the zip files from make zip into your libext folder in rundeck (e.g. /var/lib/rundeck/libext).  
-* In consul (http://127.0.0.1:8500/ui/#/p/kv/ create a key resources/$PATH/limit with a value of the MAX number of concurrent processes you want to allow.
-* In consul (http://127.0.0.1:8500/ui/#/p/kv/ create a key resources/$PATH/used with a value of 0 - this will track how many are currently in use
+* In consul (http://127.0.0.1:8500/ create a key resources/$PATH/limit with a value of the MAX number of concurrent processes you want to allow.
+* In consul (http://127.0.0.1:8500/ create a key resources/$PATH/used with a value of 0 - this will track how many are currently in use
 
 
 Usage
