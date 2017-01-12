@@ -1,0 +1,20 @@
+name: Consul Resource Release Plugin
+version: 1.0
+rundeckPluginVersion: 1.2
+author: jasonmcintosh@carfax.com
+date: 01/12/2017
+providers:
+    - name: resource-release
+      service: WorkflowStep
+      plugin-type: script
+      script-interpreter: /bin/bash
+      script-file: release_resource.sh
+      title: Release a resource using consul kv store
+      description: Releases a resource item (e.g. decrements a counter) in consul using resources/$PATH/used and resources/$PATH/limit
+      config:
+        - type: String
+          name: resourcepath
+          title: Resource Path
+          description: The path for the resource prefixed by resource/ in consul's key/value storage
+          required: true
+

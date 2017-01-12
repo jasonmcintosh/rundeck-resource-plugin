@@ -1,0 +1,25 @@
+
+name: Consul Resource Aquire Plugin
+version: 1.0
+rundeckPluginVersion: 1.2
+author: jasonmcintosh@carfax.com
+date: 1/12/2017
+providers:
+  - name: resource-aquire
+    service: WorkflowStep
+    plugin-type: script
+    script-interpreter: /bin/bash
+    script-file: acquire_resource.sh
+    title: Aquire resource using consul kv store
+    description: Checks out a resource item (e.g. increments a counter) in consul using resources/$PATH/used and resources/$PATH/limit
+    config:
+      - type: String
+        name: resourcepath
+        title: Resource Path
+        description: The path for the resource prefixed by resource/ in consul's key/value storage
+        required: true
+      - type: String
+        name: timeout
+        title: Aquisition Timeout
+        description: IF there are 3 resources available, and all 3 are checked out, wait this long for one to become available. e.g. 5h, 5m, 300s and so on
+
